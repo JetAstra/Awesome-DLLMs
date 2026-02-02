@@ -93,6 +93,8 @@ Domain tasks, evaluation suites, analysis papers.
 | 2025.10 | [[**BGPO**] Boundary-Guided Policy Optimization for Memory-efficient RL of Diffusion Large Language Models](https://arxiv.org/pdf/2510.11683) | [[code]](https://github.com/THU-KEG/BGPO) |  | |
 |2025.10 | [[**SPG**] Sandwiched Policy Gradient for Masked Diffusion Language Models](https://arxiv.org/abs/2510.09541) | [[code]](https://github.com/facebookresearch/SPG) | NeurIPS 2025 | |
 | 2025.12 | [[**ESPO**] Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective](https://arxiv.org/pdf/2512.03759) | [[code]](https://github.com/FelixMessi/Awesome-Efficient-dLLMs) |  | |
+| 2025.12 | [[**DiRL**] DiRL: An Efficient Post-Training Framework for Diffusion Language Models](https://arxiv.org/abs/2512.22234) | [[code]](https://github.com/OpenMOSS/DiRL) |  | [[summary]](https://aicarrier.feishu.cn/wiki/Gmlows2emi2XpakifxDcY1mGnfg) |
+
 
 ##### Distillation / Compression
 ---
