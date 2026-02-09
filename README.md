@@ -1,116 +1,88 @@
-# Diffusion Language Models (DLMs)
-
-A survey-style paper list for **Diffusion Language Models (DLMs)** and related topics (discrete/continuous diffusion for language, hybrid AR–diffusion, and multimodal diffusion(-language) models).
-
-**Organization:** **Paradigm → Training (Pre/Post, incl. RL) → Inference/Acceleration → Multimodal & Applications**
-
----
-
-## How I categorize papers
-
-### 1) Paradigm
-- **Discrete-space DLMs** (token-level / masked / transition-matrix / DFM-style)
-- **Continuous-space DLMs** (embedding/latent diffusion; continuous-time views)
-- **Hybrid AR–Diffusion** (e.g., block diffusion, AR init + diffusion refinement)
-- **Unified / Multimodal Paradigms** (shared representations across modalities)
-
----
-
-### 2) Training
-#### 2.1 Pre-training
-- Objective / formulation (e.g., masked diffusion, DFM, continuous-time discrete denoising)
-- Training recipe (mask/noise schedule, loss weighting, curriculum)
-- Scaling / data / architecture recipe
-
-#### 2.2 Post-training
-- **SFT / instruction tuning**
-- **RL / policy optimization**
-- **Distillation / compression** post-training (step distillation, teacher–student)
-
----
-
-### 3) Inference & Acceleration
-- Unmasking / remasking policies
-- Parallel decoding (heuristic or learned)
-- Guidance / constraints
-- Caching & reuse (KV/feature cache, adaptive refresh/eviction)
-- Distillation / quantization / systems optimizations
-
----
-
-### 4) Multimodal & Applications
-#### 4.1 Multimodal Understanding
-Multimodal input → mainly **text output** (VQA, DocVQA/OCR reasoning, video QA, audio understanding).
-
-#### 4.2 Unified Multimodal Understanding & Generation
-Unifies understanding + generation; can output **non-text modalities** (t2i/t2v, editing, any-to-any).
-
-#### 4.3 Applications & Benchmarks
-Domain tasks, evaluation suites, analysis papers.
-
----
-
-## Paper List
+ ## 📄 Paper List
 
 ### Surveys / Reading Guides
 
-| Date   | Title | Paper | Repo|
-|:------:|:------|:-----:|:-----:|
-| 2025.6 | Discrete Diffusion in Large Language and Multimodal Models: A Survey | [paper](https://arxiv.org/abs/2506.13759) | [github](https://github.com/LiQiiiii/DLLM-Survey)|
-| 2025.8 | A Survey of Diffusion Language Models | [paper](https://arxiv.org/pdf/2508.10875) | [github](https://github.com/VILA-Lab/Awesome-DLMs) |
-| 2026.1 | Efficient Diffusion Language Models: A Comprehensive Survey | [paper](https://www.authorea.com/users/1021451/articles/1381451-efficient-diffusion-language-models-a-comprehensive-survey) | [github](https://github.com/FelixMessi/Awesome-Efficient-dLLMs)|
+| Date | Name | Title | Paper | Github |
+|:-:|:-:|:-|:-:|:-:|
+| 2025.6 | `DLLM-Survey` | Discrete Diffusion in Large Language and Multimodal Models: A Survey | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2506.13759) | [![GitHub Stars](https://img.shields.io/github/stars/LiQiiiii/DLLM-Survey?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/LiQiiiii/DLLM-Survey) |
+| 2025.8 | `Awesome-DLMs` | A Survey of Diffusion Language Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/pdf/2508.10875) | [![GitHub Stars](https://img.shields.io/github/stars/VILA-Lab/Awesome-DLMs?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/VILA-Lab/Awesome-DLMs) |
+| 2026.1 | `Awesome-Efficient-dLLMs` | Efficient Diffusion Language Models: A Comprehensive Survey | [![Paper](https://img.shields.io/badge/paper-555555?style=for-the-badge&logo=googlescholar&logoColor=white)](https://www.authorea.com/users/1021451/articles/1381451-efficient-diffusion-language-models-a-comprehensive-survey) | [![GitHub Stars](https://img.shields.io/github/stars/FelixMessi/Awesome-Efficient-dLLMs?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/FelixMessi/Awesome-Efficient-dLLMs) |
+
 ---
 
 ### Paradigm
-#### Discrete-space
 
-
-#### Continuous-space
-
-
-#### Hybrid AR–Diffusion / Block Diffusion
-
-
-#### Unified / Multimodal Paradigms
-
+|  Date  |         Name         | Title                                                                                         |                                                                            Paper                                                                            |                                                                                          Github                                                                                          | Tag                                        |
+| :----: | :------------------: | :-------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------- |
+| 2022.5 |    `Diffusion-LM`    | Diffusion-LM Improves Controllable Text Generation                                            |           [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2205.14217)          | [![GitHub Stars](https://img.shields.io/github/stars/XiangLi1999/Diffusion-LM?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/XiangLi1999/Diffusion-LM) | `continuous/embedding/gaussian`            |
+| 2025.2 |        `RDLM`        | Continuous Diffusion Model for Language Modeling (Riemannian Diffusion LM)                    |           [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2502.11564)          |           [![GitHub Stars](https://img.shields.io/github/stars/harryjo97/RDLM?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/harryjo97/RDLM)           | `continuous/manifold/riemannian`           |
+| 2021.7 |        `D3PM`        | Structured Denoising Diffusion Models in Discrete State-Spaces                                |           [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2107.03006)          |                                                                                             —                                                                                            | `discrete/transition-matrix/variational`   |
+| 2022.5 |      `CTMC-DDM`      | A Continuous Time Framework for Discrete Denoising Models                                     |           [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2205.14987)          |                                                                                             —                                                                                            | `discrete/CTMC/continuous-time`            |
+| 2023.5 |    `DiffusionBERT`   | DiffusionBERT: Improving Generative Masked Language Models with Diffusion Models              | [![Paper](https://img.shields.io/badge/paper-555555?style=for-the-badge\&logo=googlescholar\&logoColor=white)](https://aclanthology.org/2023.acl-long.248/) |                                                                                             —                                                                                            | `discrete/absorbing-mask/masked-lm`        |
+| 2024.6 | `ConcreteScore/RADD` | Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data |           [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2406.03736)          |                                                                                             —                                                                                            | `discrete/absorbing-mask/conditional-view` |
+| 2024.6 |        `MDLM`        | Simple and Effective Masked Diffusion Language Models                                         |           [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2406.07524)          |      [![GitHub Stars](https://img.shields.io/github/stars/kuleshov-group/mdlm?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/kuleshov-group/mdlm)      | `discrete/absorbing-mask/efficient`        |
+| 2025.3 |        `GIDD`        | Generalized Interpolating Discrete Diffusion                                                  |           [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2503.04482)          |            [![GitHub Stars](https://img.shields.io/github/stars/dvruette/gidd?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/dvruette/gidd)            | `interpolating/mixed-noise/generalized`    |
+| 2025.3 |       `BD3-LMs`      | Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models           |           [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2503.09573)          |    [![GitHub Stars](https://img.shields.io/github/stars/kuleshov-group/bd3lms?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/kuleshov-group/bd3lms)    | `block/AR-hybrid/block-factorization`      |
 
 ---
 
 ### Training
-#### Pre-training
+#### Pre-training & Post-training
+|       Date       |         Name        | Title                                                                                  |                                                                          Paper                                                                          |                                                                                        Github                                                                                        | Tag                                     |
+| :--------------: | :-----------------: | :------------------------------------------------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------- |
+| 2024.10 |  `SMDM-ScalingLaw`  | Scaling Up Masked Diffusion Models on Text                                             | [![Paper](https://img.shields.io/badge/paper-555555?style=for-the-badge\&logo=openreview\&logoColor=white)](https://openreview.net/forum?id=WNvvwK0tut) |           [![GitHub Stars](https://img.shields.io/github/stars/ML-GSAI/SMDM?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/ML-GSAI/SMDM)           | `scaling-law/masked/compute`            |
+|      2025.10     |       `Quokka`      | Training Optimal Large Diffusion Language Models                                       |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2510.03280)        |      [![GitHub Stars](https://img.shields.io/github/stars/JinjieNi/MegaDLMs?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/JinjieNi/MegaDLMs)      | `scaling-law/compute-data/optimal`      |
+|      2025.12     | `DLM-Scaling-Noise` | Scaling Behavior of Discrete Diffusion Language Models                                 |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2512.10858)        |            [![GitHub Stars](https://img.shields.io/badge/code-link-000000?style=for-the-badge\&logo=github\&logoColor=white)](https://openreview.net/forum?id=GDYaNzxt9T)            | `scaling-law/discrete/noise-type`       |
+|      2023.5      |        `TESS`       | TESS: Text-to-Text Self-Conditioned Simplex Diffusion                                  |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2305.08379)        | [![GitHub Stars](https://img.shields.io/github/stars/allenai/tess-diffusion?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/allenai/tess-diffusion) | `base-model/continuous/simplex`         |
+|      2025.2      |       `TESS-2`      | TESS 2: A Large-Scale Generalist Diffusion Language Model                              |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2502.13917)        |       [![GitHub Stars](https://img.shields.io/github/stars/hamishivi/tess-2?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/hamishivi/tess-2)       | `base-model/instruct/adaptation`        |
+| 2024.10  |     `DiffuLLaMA`    | Scaling Diffusion Language Models via Adaptation from Autoregressive Models            |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2410.17891)        |      [![GitHub Stars](https://img.shields.io/github/stars/HKUNLP/DiffuLLaMA?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/HKUNLP/DiffuLLaMA)      | `scaling-study/adaptation/AR2DLM`       |
+|      2025.2      |       `LLaDA`       | Large Language Diffusion Models (LLaDA)                                                |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2502.09992)        |          [![GitHub Stars](https://img.shields.io/github/stars/ML-GSAI/LLaDA?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/ML-GSAI/LLaDA)          | `base-model/discrete/absorbing-mask`    |
+|      2025.8      |      `Dream-7B`     | Dream 7B: Diffusion Large Language Models                                              |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2508.15487)        |          [![GitHub Stars](https://img.shields.io/github/stars/DreamLM/Dream?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/DreamLM/Dream)          | `base-model/discrete/7B`                |
+|      2025.9      |   `Dream-Coder-7B`  | Dream-Coder 7B: An Open Diffusion Language Model for Code                              |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2509.01142)        |    [![GitHub Stars](https://img.shields.io/github/stars/DreamLM/Dream-Coder?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/DreamLM/Dream-Coder)    | `base-model/code/discrete`              |
+|      2025.10     |        `SDAR`       | SDAR: A Synergistic Diffusion-AutoRegression Paradigm for Scalable Sequence Generation |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2510.06303)        |          [![GitHub Stars](https://img.shields.io/github/stars/JetAstra/SDAR?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/JetAstra/SDAR)          | `base-model/block/AR2diffusion`         |
+|      2025.9      |    `Fast-dLLM-v2`   | Fast-dLLM v2: Efficient Block-Diffusion LLM                                            |         [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2509.26328)        |       [![GitHub Stars](https://img.shields.io/github/stars/NVlabs/Fast-dLLM?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/NVlabs/Fast-dLLM)       | `base-model/block/efficient-adaptation` |
 
 
-#### Post-training
-##### SFT / Instruction Tuning
 ##### RL / Policy Optimization
-| Date    | Paper | Code | Venue |Summary |
-|:------:|:------|:-----:|:----:|:-----:|
-| 2025.4 | [[**D1**] d1: Scaling Reasoning in Diffusion Large Language Models via Reinforcement Learning](https://arxiv.org/pdf/2504.12216)  | [[code]](https://github.com/dllm-reasoning/d1) |  | |
-|2025.5 | [[**VRPO**] LLaDA 1.5: Variance-Reduced Preference Optimization for Large Language Diffusion Models](https://arxiv.org/abs/2505.19223) | [[code]](https://github.com/ML-GSAI/LLaDA-1.5) |  | |
-| 2025.6 | [[**Coupled-GRPO**] Coupled-GRPO: Enhancing Diffusion Language Models with Coupled Generative Reinforcement Policy Optimization](https://arxiv.org/abs/2506.20639) | [[code]](https://github.com/apple/ml-diffucoder) |  | |
-| 2025.8  | [[**MDPO**] MDPO: Overcoming the Training-Inference Divide of Masked Diffusion Language Models](https://arxiv.org/abs/2509.06949) | [[code]](https://github.com/autonomousvision/mdpo) |  | |
-| 2025.9  | [[**TraceRL**] TraceRL: Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](https://arxiv.org/abs/2509.06949) | [[code]](https://github.com/Gen-Verse/dLLM-RL) | ICLR 2026 | |
-| 2025.10 | [[**BGPO**] Boundary-Guided Policy Optimization for Memory-efficient RL of Diffusion Large Language Models](https://arxiv.org/pdf/2510.11683) | [[code]](https://github.com/THU-KEG/BGPO) |  | |
-|2025.10 | [[**SPG**] Sandwiched Policy Gradient for Masked Diffusion Language Models](https://arxiv.org/abs/2510.09541) | [[code]](https://github.com/facebookresearch/SPG) | NeurIPS 2025 | |
-| 2025.12 | [[**ESPO**] Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective](https://arxiv.org/pdf/2512.03759) | [[code]](https://github.com/FelixMessi/Awesome-Efficient-dLLMs) |  | |
-| 2025.12 | [[**DiRL**] DiRL: An Efficient Post-Training Framework for Diffusion Language Models](https://arxiv.org/abs/2512.22234) | [[code]](https://github.com/OpenMOSS/DiRL) |  | [[summary]](https://aicarrier.feishu.cn/wiki/Gmlows2emi2XpakifxDcY1mGnfg) |
 
+| Date | Name | Title | Paper | Github | Summary |
+|:-:|:-:|:-|:-:|:-:|:-:|
+| 2025.4 | `D1` | d1: Scaling Reasoning in Diffusion Large Language Models via Reinforcement Learning | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/pdf/2504.12216) | [![GitHub Stars](https://img.shields.io/github/stars/dllm-reasoning/d1?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/dllm-reasoning/d1) | |
+| 2025.5 | `VRPO` | LLaDA 1.5: Variance-Reduced Preference Optimization for Large Language Diffusion Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2505.19223) | [![GitHub Stars](https://img.shields.io/github/stars/ML-GSAI/LLaDA-1.5?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/ML-GSAI/LLaDA-1.5) | |
+| 2025.6 | `Coupled-GRPO` | Coupled-GRPO: Enhancing Diffusion Language Models with Coupled Generative Reinforcement Policy Optimization | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2506.20639) | [![GitHub Stars](https://img.shields.io/github/stars/apple/ml-diffucoder?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/apple/ml-diffucoder) | |
+| 2025.8 | `MDPO` | MDPO: Overcoming the Training-Inference Divide of Masked Diffusion Language Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2509.06949) | [![GitHub Stars](https://img.shields.io/github/stars/autonomousvision/mdpo?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/autonomousvision/mdpo) | |
+| 2025.9 | `TraceRL` | TraceRL: Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2509.06949) | [![GitHub Stars](https://img.shields.io/github/stars/Gen-Verse/dLLM-RL?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/Gen-Verse/dLLM-RL) | |
+| 2025.10 | `BGPO` | Boundary-Guided Policy Optimization for Memory-efficient RL of Diffusion Large Language Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/pdf/2510.11683) | [![GitHub Stars](https://img.shields.io/github/stars/THU-KEG/BGPO?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/THU-KEG/BGPO) | |
+| 2025.10 | `SPG` | Sandwiched Policy Gradient for Masked Diffusion Language Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2510.09541) | [![GitHub Stars](https://img.shields.io/github/stars/facebookresearch/SPG?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/facebookresearch/SPG) | |
+| 2025.12 | `ESPO` | Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/pdf/2512.03759) | [![GitHub Stars](https://img.shields.io/github/stars/FelixMessi/Awesome-Efficient-dLLMs?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/FelixMessi/Awesome-Efficient-dLLMs) | |
+| 2025.12 | `DiRL` | DiRL: An Efficient Post-Training Framework for Diffusion Language Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2512.22234) | [![GitHub Stars](https://img.shields.io/github/stars/OpenMOSS/DiRL?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/OpenMOSS/DiRL) | [summary](https://aicarrier.feishu.cn/wiki/Gmlows2emi2XpakifxDcY1mGnfg) |
+| 2026.1 | `JustGRPO` | JustGRPO: Simplifying Generative Reinforcement Policy Optimization for Diffusion Language Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2601.15165) | [![GitHub Stars](https://img.shields.io/github/stars/LeapLabTHU/JustGRPO?style=for-the-badge&logo=github&label=GitHub&color=black)](https://github.com/LeapLabTHU/JustGRPO) | |
 
+Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models
 ##### Distillation / Compression
+
 ---
 
 ### Inference & Acceleration
-
 
 ---
 
 ### Multimodal & Applications
 #### Multimodal Understanding
-
+|   Date  |      Name     | Title                                                                                    |                                                                   Paper                                                                  |                                                                                     Github                                                                                     | Tag                                          |
+| :-----: | :-----------: | :--------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------- |
+|  2025.5 |   `LLaDA-V`   | LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning                  | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2505.16933) |     [![GitHub Stars](https://img.shields.io/github/stars/ML-GSAI/LLaDA-V?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/ML-GSAI/LLaDA-V)     | `vl-understanding/discrete/vis-instruct`     |
+|  2025.5 |    `LaViDa`   | LaViDa: A Large Diffusion Language Model for Multimodal Understanding                    | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2505.16839) | [![GitHub Stars](https://img.shields.io/github/stars/jacklishufan/LaViDa?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/jacklishufan/LaViDa) | `vl-understanding/discrete/masked-diffusion` |
+|  2025.5 |    `Dimple`   | Dimple: Discrete Diffusion Multimodal Large Language Model with Parallel Decoding        | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2505.16990) |        [![GitHub Stars](https://img.shields.io/github/stars/yu-rp/Dimple?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/yu-rp/Dimple)        | `vl-understanding/hybrid/ar-then-diffusion`  |
+| 2025.12 |   `SDAR-VL`   | SDAR-VL: Stable and Efficient Block-wise Diffusion for Vision-Language Understanding     | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2512.14068) |    [![GitHub Stars](https://img.shields.io/github/stars/JetAstra/SDAR-VL?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/JetAstra/SDAR-VL)    | `vl-understanding/block/bd3`                 |
+| 2025.12 | `DiffusionVL` | DiffusionVL: Translating Any Autoregressive Models into Diffusion Vision Language Models | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2512.15713) |  [![GitHub Stars](https://img.shields.io/github/stars/hustvl/DiffusionVL?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/hustvl/DiffusionVL)  | `vl-understanding/adaptation/ar2diffusion`   |
 
 #### Unified Multimodal Understanding & Generation
-
+|   Date  |      Name      | Title                                                                                             |                                                                   Paper                                                                  |                                                                                         Github                                                                                         | Tag                                 |
+| :-----: | :------------: | :------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------- |
+|  2025.5 |     `MMaDA`    | MMaDA: Multimodal Large Diffusion Language Models                                                 | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2505.15809) |         [![GitHub Stars](https://img.shields.io/github/stars/Gen-Verse/MMaDA?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/Gen-Verse/MMaDA)         | `unified/discrete/foundation`       |
+|  2025.5 |    `Muddit`    | Muddit: Liberating Generation Beyond Text-to-Image with a Unified Discrete Diffusion Model        | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2505.23606) |      [![GitHub Stars](https://img.shields.io/github/stars/M-E-AGI-Lab/Muddit?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/M-E-AGI-Lab/Muddit)      | `unified/discrete/visual-prior`     |
+|  2025.9 |   `LaViDa-O`   | LaViDa-O: Elastic Masked Diffusion Models for Unified Multimodal Understanding and Generation     | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2509.19244) | [![GitHub Stars](https://img.shields.io/github/stars/adobe-research/LaVida-O?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/adobe-research/LaVida-O) | `unified/masked-diffusion/high-res` |
+| 2025.10 | `Lumina-DiMOO` | Lumina-DiMOO: An Omni Diffusion Large Language Model for Multi-Modal Generation and Understanding | [![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2510.06308) | [![GitHub Stars](https://img.shields.io/github/stars/Alpha-VLLM/Lumina-DiMOO?style=for-the-badge\&logo=github\&label=GitHub\&color=black)](https://github.com/Alpha-VLLM/Lumina-DiMOO) | `unified/discrete/omni`             |
 
 #### Applications & Benchmarks
-
-
